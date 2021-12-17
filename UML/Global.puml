@@ -1,0 +1,97 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'interfejs raczej napewno do zmian oraz dodania nowych
+
+class Main
+{
+    'łądowanie baz danych razem z odpoiwednimi typami eventów
+    'baza danych ludzi
+}
+
+'Faced
+class Application
+{
+
+}
+
+class PersonDatabase
+{
+
+}
+
+class DocumentEventDatabase
+{
+    'rodzaje eventów np w listach
+}
+
+class OffenseEventDatabase
+{
+
+}
+
+interface IInstitution
+{
+    'informacje odnosnie instytucji wydajacej dany dokument
+}
+
+'chodzi o organ wydający i zarządzający dokumentami
+'tu można by było zastosować flyweight
+class DocumentAuthority
+{
+    - List<IInstitution> Institutions
+}
+
+class PoliceHeadquarter
+{
+    List<Officer> officers
+}
+
+class Officer
+{
+
+}
+
+class Person
+{
+    /'imię, nazwisko, data i miejsce urodzenia, pesel,
+     adres stałego miejsca pobytu, charakterystyka dokumentu stwierdzającego posiadane uprawnienia'/
+    - dane
+    Document doc
+}
+
+' trzeba dodac logikę np przez strategie tego
+' ,że w zależności daty zdobycia prawa jazdy zmienia sie ilość punktów
+' po której zabierają prawojazdy
+class Document
+{
+    /'(datę nadania uprawnień, datę wygaśnięcia uprawnień, organ nadający uprawnienia, numer dokumentu, wydającego dokument, datę ważności dokumentu)'/
+
+    - DocumentData
+    - IInstitution
+
+    'przechowywane eventy które są utworzone z góry lub przez inny podmiot dodawane do bazy
+    - List<IDocumentEvent> docEvents
+    - List<IOffenseEvent> offenseEvents
+
+    + GetDrivingPermissionState()
+
+}
+
+interface IDocumentEvent
+{
+    /' zdarzenia zatrzymania dokumentu oraz zwrócenia,
+    cofnięcia uprawnienia oraz przywrócenia, utraty oraz odnalezienia,
+    a także orzeczeń o zakazie prowadzenia pojazdów'/
+}
+
+interface IOffenseEvent
+{
+    + GetPoints() : int
+}
+
+node GUI{
+    class rozneKlasy{}
+}
+
+@enduml
