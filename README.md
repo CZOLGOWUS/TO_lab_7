@@ -9,3 +9,4 @@ dzialanie aplikacji:
 - prosi o wybranie wykroczenia z dostepenj bazy wykroczen
 - sprawdza i wyswietla ilosc punktów i konsekwencja jesli np ilosc zostałą przekroczona
 - wraca do menu
+- ...
