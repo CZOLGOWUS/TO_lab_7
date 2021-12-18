@@ -5,13 +5,13 @@
 
 class Main
 {
-    'łądowanie baz danych razem z odpoiwednimi typami eventów
-    'baza danych ludzi
 }
 
 'Faced
 class Application
 {
+    'łądowanie baz danych razem z odpoiwednimi typami eventów
+    'baza danych ludzi
 
 }
 
@@ -33,12 +33,14 @@ class OffenseEventDatabase
 interface IInstitution
 {
     'informacje odnosnie instytucji wydajacej dany dokument
+    miejsce które tworzy dokumenty
 }
 
 'chodzi o organ wydający i zarządzający dokumentami
 'tu można by było zastosować flyweight
 class DocumentAuthority
 {
+    głowny zarząd produkcji dokumentów
     - List<IInstitution> Institutions
 }
 
@@ -93,5 +95,26 @@ interface IOffenseEvent
 node GUI{
     class rozneKlasy{}
 }
+
+Main *-d- Application
+
+Application *-- DocumentEventDatabase
+Application *-- OffenseEventDatabase
+Application *--- PersonDatabase
+Application "1" *-- "0…n" PoliceHeadquarter
+
+Application -- GUI
+
+PoliceHeadquarter *-- Officer
+
+PersonDatabase *-- Person
+
+Person o-- Document
+
+DocumentAuthority ..> Document : "creates"
+DocumentAuthority --> IInstitution
+
+OffenseEventDatabase *-- IOffenseEvent
+DocumentEventDatabase *-- IDocumentEvent
 
 @enduml

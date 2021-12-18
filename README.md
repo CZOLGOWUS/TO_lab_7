@@ -6,7 +6,7 @@ dzialanie aplikacji:
 - wpisujemy dane osoby
 - wyswietla dane osoby + opcje
 - opcja dodania wykroczenia
-- prosi o wybranie wykroczenia z dostepenj bazy wykroczen
+- prosi o wybranie wykroczenia z dostepnej bazy wykroczen
 - sprawdza i wyswietla ilosc punktów i konsekwencja jesli np ilosc zostałą przekroczona
 - wraca do menu
 - ...
