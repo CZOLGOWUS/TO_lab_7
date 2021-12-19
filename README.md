@@ -10,3 +10,8 @@ dzialanie aplikacji:
 - sprawdza i wyswietla ilosc punktów i konsekwencja jesli np ilosc zostałą przekroczona
 - wraca do menu
 - ...
+
+
+
+Opracowanie ogólnego rozwiązania klas oraz relacji:
+	Jarosław Kołodziej, Przemysław Kożuch
