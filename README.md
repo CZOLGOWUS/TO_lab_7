@@ -1,4 +1,4 @@
-dzialanie aplikacji:
+## dzialanie aplikacji:
 - prosi o zalogowanie sie officera
 - identyfikuje czy jest taki officer
 - wyswitla menu z dostepnymi czynnosciami (wykroczenie/zdarzenie obejmujace dokument np, zgubienie)
@@ -11,7 +11,8 @@ dzialanie aplikacji:
 - wraca do menu
 - ...
 
-
+## diagram:
+![main-uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/CZOLGOWUS/TO_lab_7/main/UML/Global.puml)
 
 Opracowanie ogólnego rozwiązania klas oraz relacji:
 	Jarosław Kołodziej, Przemysław Kożuch
